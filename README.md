@@ -97,56 +97,7 @@ node index.js
 
 ---
 
-## 7. Тестирование API
-
-Примеры curl:
-
-* Регистрация пользователя:
-
-```bash
-curl -X POST http://localhost:3000/auth/register \
--H "Content-Type: application/json" \
--d '{"email":"doctor1@example.com","password":"123456","role":"doctor"}'
-```
-
-* Логин:
-
-```bash
-curl -X POST http://localhost:3000/auth/login \
--H "Content-Type: application/json" \
--d '{"email":"doctor1@example.com","password":"123456"}'
-```
-
-* Создание медицинской записи (JWT в Authorization):
-
-```bash
-curl -X POST http://localhost:3000/records \
--H "Authorization: Bearer <JWT_TOKEN>" \
--H "Content-Type: application/json" \
--d '{"patientId":"<id>", "diagnosis":"Flu", "notes":"Take rest"}'
-```
-
----
-
-## 8. Настройка Flutter
-
-1. Клонируй Flutter проект.
-2. В коде Flutter установи `baseURL` на локальный backend:
-
-```dart
-const String baseURL = "http://localhost:3000";
-```
-
-3. Запусти Flutter:
-
-```bash
-flutter pub get
-flutter run
-```
-
----
-
-## 9. Последовательность запуска
+## 7. Последовательность запуска
 
 1. Hardhat node (`npx hardhat node`)
 2. Деплой контракт (`npx hardhat run scripts/deploy.js --network localhost`)
@@ -157,7 +108,7 @@ flutter run
 
 ---
 
-## 10. Советы
+## 8. Советы
 
 * Используйте отдельные терминалы для Hardhat node, деплоя контракта и backend.
 * Все действия пользователя логируются в локальном blockchain через контракт AuditTrail.
