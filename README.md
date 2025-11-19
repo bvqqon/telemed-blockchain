@@ -42,12 +42,12 @@ npm install
 Создай файл `.env` в корне проекта с содержимым:
 
 ```
-MONGO_URI=<MongoDB Atlas URI>
-PRIVATE_KEY=<любой приватный ключ для Hardhat local>
 RPC_URL=http://127.0.0.1:8545
-CONTRACT_ADDRESS=
+PRIVATE_KEY=ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+CONTRACT_ADDRESS=0x5FbDB2315678afecb367f032d93F642f64180aa3
 JWT_SECRET=supersecretkey
-PORT=3000
+MONGO_URI=mongodb+srv://@cluster0.ywpdctl.mongodb.net/?appName=Cluster0
+
 ```
 
 > CONTRACT_ADDRESS можно оставить пустым, Hardhat сгенерирует новый адрес при деплое.
@@ -100,7 +100,7 @@ node index.js
 ## 7. Последовательность запуска
 
 1. Hardhat node (`npx hardhat node`)
-2. Деплой контракт (`npx hardhat run scripts/deploy.js --network localhost`)
+2. Деплой контракт (`npx hardhat ignition deploy ./ignition/modules/AuditTrailModule.js --network localhost`)
 3. Backend (`node index.js`)
 4. Flutter (`flutter run`)
 
